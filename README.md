@@ -34,11 +34,11 @@ cd parkinsons-prediction
    pip install -r requirements.txt
 
 3. Run the model:
-   python train_model.py/n
-   python random_forest.py
-   python xgboost.py
-   python install svm.py
-   python install neural_network.py
+   python train_model.py   
+   python random_forest.py   
+   python xgboost.py   
+   python install svm.py         
+   python install neural_network.py    
 
 4. Run the Flask app:
    python app.py
