@@ -44,6 +44,6 @@ cd parkinsons-prediction
    python app.py    
 
 # 📈 Results
-**Best model:** SVM (or whichever gave best accuracy)
-**Accuracy**: ~90%+
+**Best model:** SVM (or whichever gave best accuracy)    
+**Accuracy**: ~90%+    
 Confusion matrix, classification report, and ROC curve are used for evaluation
