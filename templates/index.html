@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            padding: 10px;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #45a049;
+            box-shadow: 0 0 8px #45a049;
+        }
+
+        .form-group input::placeholder {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #4CAF50; font-size: 28px;">
+            Parkinson's Disease Prediction
+        </h1>
+
+        <p style="text-align: center; font-size: 18px; color: #555;">
+            Enter the following <strong>22 medical parameters</strong> to predict the likelihood of Parkinson's Disease.
+        </p>
+
+        <!-- Additional Info -->
+        <p style="text-align: center; font-size: 14px; color: #888;">
+            ⚠️ Ensure accurate values for better predictions.
+            📊 Based on AI & Machine Learning Analysis.
+        </p>
+
+
+        <form action="/predict" method="post">
+            <div class="grid-container">
+                <div class="form-group">
+                    <label for="MDVP_Fo">MDVP:Fo (Hz)</label>
+                    <input id="MDVP_Fo" type="text" name="MDVP_Fo" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="MDVP_Fhi">MDVP:Fhi (Hz)</label>
+                    <input id="MDVP_Fhi" type="text" name="MDVP_Fhi" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="MDVP_Flo">MDVP:Flo (Hz)</label>
+                    <input id="MDVP_Flo" type="text" name="MDVP_Flo" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="MDVP_Jitter">MDVP:Jitter (%)</label>
+                    <input id="MDVP_Jitter" type="text" name="MDVP_Jitter" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="MDVP_JitterAbs">MDVP:Jitter(Abs)</label>
+                    <input id="MDVP_JitterAbs" type="text" name="MDVP_JitterAbs" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="MDVP_RAP">MDVP:RAP</label>
+                    <input id="MDVP_RAP" type="text" name="MDVP_RAP" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="MDVP_PPQ">MDVP:PPQ</label>
+                    <input id="MDVP_PPQ" type="text" name="MDVP_PPQ" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="Jitter_DDP">Jitter:DDP</label>
+                    <input id="Jitter_DDP" type="text" name="Jitter_DDP" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="MDVP_Shimmer">MDVP:Shimmer</label>
+                    <input id="MDVP_Shimmer" type="text" name="MDVP_Shimmer" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="MDVP_Shimmer_dB">MDVP:Shimmer(dB)</label>
+                    <input id="MDVP_Shimmer_dB" type="text" name="MDVP_Shimmer_dB" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="Shimmer_APQ3">Shimmer:APQ3</label>
+                    <input id="Shimmer_APQ3" type="text" name="Shimmer_APQ3" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="Shimmer_APQ5">Shimmer:APQ5</label>
+                    <input id="Shimmer_APQ5" type="text" name="Shimmer_APQ5" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="MDVP_APQ">MDVP:APQ</label>
+                    <input id="MDVP_APQ" type="text" name="MDVP_APQ" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="Shimmer_DDA">Shimmer:DDA</label>
+                    <input id="Shimmer_DDA" type="text" name="Shimmer_DDA" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="NHR">NHR</label>
+                    <input id="NHR" type="text" name="NHR" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="HNR">HNR</label>
+                    <input id="HNR" type="text" name="HNR" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="RPDE">RPDE</label>
+                    <input id="RPDE" type="text" name="RPDE" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="DFA">DFA</label>
+                    <input id="DFA" type="text" name="DFA" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="spread1">spread1</label>
+                    <input id="spread1" type="text" name="spread1" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="spread2">spread2</label>
+                    <input id="spread2" type="text" name="spread2" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="D2">D2</label>
+                    <input id="D2" type="text" name="D2" placeholder="Enter value" required>
+                </div>
+                <div class="form-group">
+                    <label for="PPE">PPE</label>
+                    <input id="PPE" type="text" name="PPE" placeholder="Enter value" required>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="submit">Predict</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputs = document.querySelectorAll("input");
+
+            inputs.forEach(input => {
+                input.addEventListener("input", function () {
+                    if (!/^\d*\.?\d*$/.test(this.value)) {
+                        this.style.borderColor = "red";
+                    } else {
+                        this.style.borderColor = "#4CAF50";
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
