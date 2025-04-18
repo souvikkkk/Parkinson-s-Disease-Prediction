@@ -34,7 +34,7 @@ cd parkinsons-prediction
    pip install -r requirements.txt
 
 3. Run the model:
-   python train_model.py
+   python train_model.py/n
    python random_forest.py
    python xgboost.py
    python install svm.py
