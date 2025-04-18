@@ -13,12 +13,12 @@ iii) It contains 24 biomedical voice measurements from 31 people, 23 with Parkin
 **NHR, HNR** – Noise to Harmonic ratio, etc.
 **Status** – Target variable (1 = Parkinson’s, 0 = Healthy)
 # 🛠️Technologies Used:
-Python
-Scikit-learn
-Pandas
-NumPy
-Matplotlib / Seaborn (for visualization)
-Flask (for web interface)
+Python    
+Scikit-learn    
+Pandas    
+NumPy    
+Matplotlib / Seaborn (for visualization)     
+Flask (for web interface)     
 # 📊 Machine Learning Models
 Decision Tress
 Support Vector Machine (SVM)
